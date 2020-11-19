@@ -1,0 +1,51 @@
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.title {
+  background: none;
+  border: none;
+  outline: inherit;
+  font-size: 2rem;
+  letter-spacing: 5px;
+}
+
+.cart {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  font-size: 1.25rem;
+  padding: 8px 24px;
+}
+
+.cartActive {
+  padding: 10px;
+  position: absolute;
+  right: 170px;
+  height: 70%;
+  top: 12vh;
+  background-image: linear-gradient(120deg, #b0c6ce, #b6b0bf);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  transform: translateX(0%);
+  z-index: 1;
+  animation: cartAnimation 0.5s;
+}
+
+@keyframes cartAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cartInactive {
+  display: none;
+}

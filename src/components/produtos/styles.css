@@ -1,0 +1,23 @@
+.produtos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d7fdec;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 14px;
+}
+
+.produto {
+  flex: 1;
+  margin: 0 250px 0 10px;
+}
+
+.buttonProduct {
+  margin: 0 10px 0 10px;
+}
+
+.productContainer {
+  display: flex;
+  justify-content: center;
+}
