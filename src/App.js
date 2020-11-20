@@ -2,11 +2,11 @@ import React from 'react'
 import  { Provider } from 'react-redux';
 import NavBar from './components/navbar';
 import Produtos from './components/produtos';
-import storeQuantidade from './store';
+import store from './store';
 
 function App() {
   return (
-    <Provider store={storeQuantidade}>
+    <Provider store={store}>
         <NavBar />
         <Produtos />
     </Provider>

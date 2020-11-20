@@ -11,16 +11,16 @@ function Produtos() {
         'Produto 4'
     ]
 
-    var quantidade = useSelector(state => state.quantidade)
+    let quantidade = useSelector(state => state.quantidade)
     const dispatch = useDispatch();
 
-    function addQuantidade(){
-        dispatch({ type: 'ADD_QUANTIDADE', add: quantidade = quantidade + 1})
+    function addQuantidade(e){
+        dispatch({ type: 'ADD_QUANTIDADE', add: quantidade = quantidade + 1 })
+        dispatch({ type: 'ADD_PRODUTO', addProduto: e.target.id })
+        console.log(e.target.id)
     }
 
-    function subQuantidade(){
-        dispatch({ type: 'SUB_QUANTIDADE', sub: quantidade = quantidade - 1})
-    }
+
 
 
     return  (
@@ -29,13 +29,12 @@ function Produtos() {
        {products.map(product =>
          <div  key={product}  className='produtos' >
              <li className='produto'>{product}</li> 
-             <button onClick = { addQuantidade } className="buttonProduct">Adicionar</button> 
-             <p> {quantidade} </p>
-             <button disabled={quantidade > 0 ? false : true} onClick = { subQuantidade } className="buttonProduct">Remover</button>
+             <button id={product} onClick = { addQuantidade } className="buttonProduct">Adicionar</button> 
         </div>
     )}
        
     </ul>
+
 
     </div>
 

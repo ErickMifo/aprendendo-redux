@@ -1,17 +1,20 @@
 import { createStore } from 'redux';
 
-const INITAL_STATE= {
+const INITAL_STATE = {
+    data: [
+        
+    ],
     quantidade: 0
 }
 
 
-function QuantidadeReducer(state = INITAL_STATE, action) {
+function Reducer(state = INITAL_STATE, action) {
     switch(action.type) {
+        case 'ADD_PRODUTO': 
+             return {...state, data: [...state.data, action.addProduto] }
+
         case 'ADD_QUANTIDADE':
-            return { quantidade:  action.add};
-        
-        case 'SUB_QUANTIDADE':
-            return { quantidade: action.sub }
+            return {...state, quantidade:  action.add};
         
             default:
                 return state;
@@ -20,6 +23,6 @@ function QuantidadeReducer(state = INITAL_STATE, action) {
 }
 
 
-const storeQuantidade = createStore(QuantidadeReducer);
+const store = createStore(Reducer);
 
-export default storeQuantidade
+export default store

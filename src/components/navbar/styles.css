@@ -49,3 +49,13 @@
 .cartInactive {
   display: none;
 }
+
+.lista {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.itemLista {
+  margin-bottom: 10px;
+}

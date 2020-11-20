@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import './styles.css';
 
 
 function NavBar() {
+
+    let produtos = useSelector(state => state.data)
+    let quantidade = useSelector(state => state.quantidade)
     
     const [click, setClick] = useState(false)
 
@@ -22,7 +26,7 @@ setClick(!click)
        
             <button
             className = "cart" 
-            onClick={handleClick}> Cart </button>
+            onClick={handleClick}> Carrinho: {quantidade} </button>
 
     
         </div>
@@ -30,6 +34,12 @@ setClick(!click)
 
         <div className = {click ? 'cartActive' : 'cartInactive'}>
             <h1>Lista de produtos</h1>
+            <ul className="lista">
+                {produtos.map(produto =>
+             <li className="itemLista">{produto}</li> 
+                )}
+       
+    </ul>
         </div>
 
 
